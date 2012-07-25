@@ -6,7 +6,6 @@
  *   php fetch.php
  */
 
-$version = '3.4.15';
 $packages = array(
 	'3.4.15' => array(
 		'github' => array(
@@ -47,5 +46,5 @@ function fetch(array $packages)
 	}
 }
 
-
+$version = '3.4.15';
 fetch($packages[$version]);
