@@ -1,6 +1,6 @@
 # Install PHPUnit as a Git checkout
 
-    cd $HOME/local/phpunit
+    cd $HOME/local
     git clone https://github.com/kblomqvist/gitinstall-phpunit.git phpunit
     make install
     ./phpunit.php --version
