@@ -6,6 +6,7 @@ Furthermore, if you like to install different version, edit fetch.php.
 
     cd $HOME/local
     git clone https://github.com/kblomqvist/gitinstall-phpunit.git phpunit
+    cd phpunit
     make install
     ./phpunit.php --version
     
