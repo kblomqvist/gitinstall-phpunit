@@ -14,7 +14,7 @@ Furthermore, if you like to install different version, edit fetch.php.
 
 You may like to create a symlink to `phpunit.php` script file
 
-    cd ~/bin # or whatever is in your PATH
+    cd ~/bin # or whatever directory that's in your PATH
     ln -s ~/local/phpunit/phpunit.php phpunit
 
 Now you can just call phpunit at any directory and without the `.php` suffix, like this
