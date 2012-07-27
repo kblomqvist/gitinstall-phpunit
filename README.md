@@ -7,21 +7,24 @@ Furthermore, if you like to install different version, edit fetch.php.
 ### Step 1. Decide the installation directory
 
     $ cd $HOME/local # or where ever you want to install phpunit
+
+### Step 2. Git clone this repo
+
     $ git clone https://github.com/kblomqvist/gitinstall-phpunit.git phpunit
     $ cd phpunit
 
-### Step 2. Install
+### Step 3. Run make install
 
     $ make install
 
-### Step 3. Check that everything works
+### Step 4. Check that everything works
 
     $ ./phpunit.php --version
     PHPUnit @package_version@ by Sebastian Bergmann.
     
 Note that the version is `@package_version@` because the PHPUnit wasn't build but checked from Git.
 
-### Step 4. Create symlink
+### Optional step. Create symlink
 
     cd ~/bin # or whatever directory that's in your PATH
     ln -s phpunit.php phpunit
