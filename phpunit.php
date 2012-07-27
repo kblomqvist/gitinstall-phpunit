@@ -8,7 +8,7 @@
  *   ./phpunit.php
  */
 
-$dirs = array_filter(scandir("."), "is_dir");
+$dirs = array_filter(scandir(__DIR__), "is_dir");
 unset($dirs[0], $dirs[1]);
 $path = get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, $dirs);
 set_include_path($path);
