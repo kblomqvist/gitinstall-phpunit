@@ -1,4 +1,4 @@
-# Install PHPUnit as a Git checkout
+# Install PHPUnit as a Git checkout (without PEAR)
 
 The installation happens locally, so there's no need for root access. If you follow
 the instructions below, then `~/local/phpunit` will be your installation directory.
