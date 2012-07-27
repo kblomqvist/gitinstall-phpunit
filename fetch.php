@@ -38,10 +38,10 @@ function trimPackageName($type, $package)
 function fetch(array $packages)
 {
 	foreach ($packages['github'] as $repo => $tag) {
-		exec("git clone https://github.com/$repo.git");
+		passthru("git clone https://github.com/$repo.git");
 		if ($tag != "master") {
-			$repo = trimPackageName('github', $repo);			
-			exec("cd $repo && git checkout -b $tag");
+			$repo = trimPackageName('github', $repo);
+			passthru("cd $repo && git checkout -b $tag");
 		}
 	}
 }
