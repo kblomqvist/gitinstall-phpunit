@@ -1,5 +1,5 @@
 install:
-	php < fetch.php
+	php fetch.php
 	sed -i '1d' phpunit/phpunit.php
 	chmod +x phpunit.php
 
