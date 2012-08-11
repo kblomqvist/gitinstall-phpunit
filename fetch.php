@@ -19,7 +19,8 @@ $packages = array(
 		'sebastianbergmann/phpunit-selenium'     => array('master', 'phpunit-selenium'),
 		'sebastianbergmann/phpunit-story'        => array('master', 'phpunit-story'),
 		'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
-		'symfony/Yaml'                           => array('master', 'Symfony/Component/Yaml')
+		'symfony/Yaml'                           => array('master', 'symfony-components/Symfony/Component/Yaml'),
+		'symfony/Finder'                         => array('master', 'symfony-components/Symfony/Component/Finder')
 	),
 	'3.6.12' => array(
 		'sebastianbergmann/phpunit'              => array('3.6.12', 'phpunit'),
@@ -33,7 +34,8 @@ $packages = array(
 		'sebastianbergmann/phpunit-selenium'     => array('master', 'phpunit-selenium'),
 		'sebastianbergmann/phpunit-story'        => array('master', 'phpunit-story'),
 		'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
-		'symfony/Yaml'                           => array('master', 'Symfony/Component/Yaml')
+		'symfony/Yaml'                           => array('master', 'symfony-components/Symfony/Component/Yaml'),
+		'symfony/Finder'                         => array('master', 'symfony-components/Symfony/Component/Finder')
 	)
 );
 

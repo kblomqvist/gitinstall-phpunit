@@ -1,4 +1,4 @@
-# Install PHPUnit as a Git checkout
+# Install PHPUnit as a Git checkout (without PEAR)
 
 The installation happens locally, so there's no need for root access. If you follow
 the instructions below, then `~/local/phpunit` will be your installation directory.
@@ -19,24 +19,38 @@ Furthermore, if you like to install different version, edit fetch.php.
 
 ### Step 4. Check that everything works
 
-    $ ./phpunit.php --version
+    $ ./phpunit.sh --version
     PHPUnit @package_version@ by Sebastian Bergmann.
     
-Note that the version is `@package_version@` because the PHPUnit wasn't build but checked from Git. To test the installation even further you may like to run PHPUnit selftest suite. Here's the trick to do that
+Note that the version is `@package_version@` because the PHPUnit wasn't build but checked from Git. To test the installation even further you may like to run PHPUnit selftest. Here's the trick how to do that
 
     $ cd $HOME/local/phpunit # just in case you got lost
     $ cd phpunit
-    $ ln -s ../Symfony
-    $ ./phpunit.php.old
+    $ ../phpunit.sh
 
-Again you will see few unharmful errors because the PHPUnit wasn't build but checked from Git (or at least I assume this to be the case;). If you got an error `Class PEAR_RunTest not found` then you have not installed PHP with PEAR. And yes, PHPUnit is not completely PEAR free. Unfortunately.
+Again you will see few unharmful errors because the PHPUnit wasn't build but checked from Git (or at least I assume this to be the case;). If you are getting an error `Class PEAR_RunTest not found`, then you have not installed PHP with PEAR. In this respect PHPUnit is not completely PEAR free.
+
+In case you are still wondering if this really works, try to run something big. For example, Zend Framework 2 test suite.
+
+    $ cd $HOME/workspace # or where ever you like to work on
+    $ git clone git://github.com/zendframework/zf2.git
+    $ cd zf2/tests
+
+Edit `run-test.php` and setup `$phpunit_bin`
+
+    $HOME = getenv("HOME");
+    $phpunit_bin = "$HOME/local/phpunit/phpunit.sh";
+
+Run the test suite
+
+    $ ./run-test.sh
 
 ### Optional step. Create symlink
 
     cd ~/bin # or whatever directory that's in your PATH
-    ln -s phpunit.php phpunit
+    ln -s $HOME/local/phpunit/phpunit.sh phpunit
 
-Now you can just call phpunit at any directory and without the `.php` suffix, like this
+Now you can just call phpunit at any directory, just like any other program
 
     cd # go home
     phpunit --version
