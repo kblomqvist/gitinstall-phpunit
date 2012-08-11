@@ -59,4 +59,4 @@ Run the test suite
 
     $ ./run-test.php
 
-All test pass. Excelent!
+All test pass. Excellent!
