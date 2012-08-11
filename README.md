@@ -42,7 +42,7 @@ Now you can call phpunit at any directory, just like any other program
     cd # go home
     phpunit --version
 
-### Optional step 6. Just for fune
+### Optional step 6. Just for fun
 
 Let's try to run something big. For example, the test suite of [Zend Framework 2](https://github.com/zendframework/zf2).
 
