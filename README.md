@@ -1,4 +1,4 @@
-# Install [PHPUnit](https://github.com/sebastianbergmann/phpunit/) as a Git checkout (without PEAR)
+# Install [PHPUnit](https://github.com/sebastianbergmann/phpunit/) as a Git checkout (without :pear:)
 
 The installation happens locally, so there's no need for root access. If you follow
 the instructions below, then `~/local/phpunit` will be your installation directory.
