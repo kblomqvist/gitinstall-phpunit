@@ -43,7 +43,7 @@ Edit `run-test.php` and setup `$phpunit_bin`
 
 Run the test suite
 
-    $ ./run-test.sh
+    $ ./run-test.php
 
 ### Optional step. Create symlink
 
