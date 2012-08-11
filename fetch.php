@@ -8,43 +8,44 @@
 
 $packages = array(
 	'3.4.15' => array(
-		'github' => array(
-			'sebastianbergmann/phpunit' => '3.4.15',
-			'sebastianbergmann/dbunit' => 'master',
-			'sebastianbergmann/php-file-iterator' => '1.2.6',
-			'sebastianbergmann/php-text-template' => 'master',
-			'sebastianbergmann/php-code-coverage' => '1.0.5',
-			'sebastianbergmann/php-token-stream' => '1.0.1',
-			'sebastianbergmann/php-timer' => 'master',
-			'sebastianbergmann/phpunit-mock-objects' => 'master',
-			'sebastianbergmann/phpunit-selenium' => 'master',
-			'sebastianbergmann/phpunit-story' => 'master',
-			'sebastianbergmann/php-invoker' => 'master'
-		),
+		'sebastianbergmann/phpunit'              => array('3.4.15', 'phpunit'),
+		'sebastianbergmann/dbunit'               => array('master', 'dbunit'),
+		'sebastianbergmann/php-file-iterator'    => array('1.2.6', 'php-file-iterator'),
+		'sebastianbergmann/php-text-template'    => array('master', 'php-text-template'),
+		'sebastianbergmann/php-code-coverage'    => array('1.0.5', 'php-code-coverage'),
+		'sebastianbergmann/php-token-stream'     => array('1.0.1', 'php-token-stream'),
+		'sebastianbergmann/php-timer'            => array('master', 'php-timer'),
+		'sebastianbergmann/phpunit-mock-objects' => array('master', 'phpunit-mock-objects'),
+		'sebastianbergmann/phpunit-selenium'     => array('master', 'phpunit-selenium'),
+		'sebastianbergmann/phpunit-story'        => array('master', 'phpunit-story'),
+		'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
+		'symfony/Yaml'                           => array('master', 'Symfony/Component/Yaml')
+	),
+	'3.6.12' => array(
+		'sebastianbergmann/phpunit'              => array('3.6.12', 'phpunit'),
+		'sebastianbergmann/dbunit'               => array('master', 'dbunit'),
+		'sebastianbergmann/php-file-iterator'    => array('master', 'php-file-iterator'),
+		'sebastianbergmann/php-text-template'    => array('master', 'php-text-template'),
+		'sebastianbergmann/php-code-coverage'    => array('master', 'php-code-coverage'),
+		'sebastianbergmann/php-token-stream'     => array('master', 'php-token-stream'),
+		'sebastianbergmann/php-timer'            => array('master', 'php-timer'),
+		'sebastianbergmann/phpunit-mock-objects' => array('master', 'phpunit-mock-objects'),
+		'sebastianbergmann/phpunit-selenium'     => array('master', 'phpunit-selenium'),
+		'sebastianbergmann/phpunit-story'        => array('master', 'phpunit-story'),
+		'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
+		'symfony/Yaml'                           => array('master', 'Symfony/Component/Yaml')
 	)
 );
 
-function trimPackageName($type, $package)
-{
-	switch ($type) {
-		case "github":
-			$package = strstr($package, '/');
-			$package = substr($package, 1);
-			break;
-	}
-	return $package;
-}
-
 function fetch(array $packages)
 {
-	foreach ($packages['github'] as $repo => $tag) {
-		passthru("git clone https://github.com/$repo.git");
-		if ($tag != "master") {
-			$repo = trimPackageName('github', $repo);
-			passthru("cd $repo && git checkout -b $tag");
+	foreach ($packages as $repo => $tag) {
+		passthru("git clone https://github.com/$repo.git $tag[1]");
+		if ($tag[0] != 'master') {
+			passthru("cd $tag[1] && git checkout -b $tag[0]");
 		}
 	}
 }
 
-$version = '3.4.15';
+$version = '3.6.12';
 fetch($packages[$version]);
