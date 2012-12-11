@@ -19,7 +19,7 @@ $packages = array(
 		'sebastianbergmann/phpunit-selenium'     => array('master', 'phpunit-selenium'),
 		'sebastianbergmann/phpunit-story'        => array('master', 'phpunit-story'),
 		'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
-		'symfony/Yaml'                           => array('master', 'symfony-components/Symfony/Component/Yaml'),
+		'symfony/Yaml'                           => array('v2.0.19', 'symfony-components/Symfony/Component/Yaml'),
 		'symfony/Finder'                         => array('master', 'symfony-components/Symfony/Component/Finder')
 	),
 	'3.6.12' => array(
@@ -34,7 +34,7 @@ $packages = array(
 		'sebastianbergmann/phpunit-selenium'     => array('master', 'phpunit-selenium'),
 		'sebastianbergmann/phpunit-story'        => array('master', 'phpunit-story'),
 		'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
-		'symfony/Yaml'                           => array('master', 'symfony-components/Symfony/Component/Yaml'),
+		'symfony/Yaml'                           => array('v2.0.19', 'symfony-components/Symfony/Component/Yaml'),
 		'symfony/Finder'                         => array('master', 'symfony-components/Symfony/Component/Finder')
 	)
 );
@@ -44,7 +44,7 @@ function fetch(array $packages)
 	foreach ($packages as $repo => $tag) {
 		passthru("git clone https://github.com/$repo.git $tag[1]");
 		if ($tag[0] != 'master') {
-			passthru("cd $tag[1] && git checkout -b $tag[0]");
+			passthru("cd $tag[1] && git checkout tags/$tag[0]");
 		}
 	}
 }
