@@ -1,5 +1,5 @@
 #!/bin/bash
-SCRIPT_PATH='/home/users/kobsu/local/phpunit'
+SCRIPT_PATH=$PWD
 
 PHP_INCLUDE_PATH=`php -r 'echo get_include_path();'`
 PHP_INCLUDE_PATH+=":"
