@@ -1,7 +1,8 @@
 # Install [PHPUnit](https://github.com/sebastianbergmann/phpunit/) as a Git checkout (without :pear:)
 
-The installation happens locally, so there's no need for root access. If you follow
-the instructions below, then `~/local/phpunit` will be your installation directory.
+If you follow the instructions below, the installation happens locally
+and there's no need for root access. The `~/local/phpunit` will be your
+installation directory.
 
 ### Step 1. Decide the installation directory
 
@@ -61,5 +62,5 @@ All test pass. Excellent!
 
 ## QA
 
-Q: Why my PHPUnit version is `@package_version@`?  
+Q: Why my PHPUnit version is _@package_version@_?  
 A: That's the feature of the earlier versions of PHPUnit (<=3.6).
