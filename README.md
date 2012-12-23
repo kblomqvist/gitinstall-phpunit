@@ -2,7 +2,7 @@
 
 The installation happens locally, so there's no need for root access. If you follow
 the instructions below, then `~/local/phpunit` will be your installation directory.
-Furthermore, if you like to install different version, edit fetch.php.
+If you like to install different version, edit fetch.php.
 
 ### Step 1. Decide the installation directory
 
