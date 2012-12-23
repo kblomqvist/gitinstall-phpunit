@@ -51,6 +51,21 @@ $packages = array(
                 'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
                 'symfony/Yaml'                           => array('v2.1.0', 'symfony-components/Symfony/Component/Yaml'),
                 'symfony/Finder'                         => array('master', 'symfony-components/Symfony/Component/Finder')
+        ),
+        'master' => array(
+                'sebastianbergmann/phpunit'              => array('master', 'phpunit'),
+                'sebastianbergmann/dbunit'               => array('master', 'dbunit'),
+                'sebastianbergmann/php-file-iterator'    => array('master', 'php-file-iterator'),
+                'sebastianbergmann/php-text-template'    => array('master', 'php-text-template'),
+                'sebastianbergmann/php-code-coverage'    => array('master', 'php-code-coverage'),
+                'sebastianbergmann/php-token-stream'     => array('master', 'php-token-stream'),
+                'sebastianbergmann/php-timer'            => array('master', 'php-timer'),
+                'sebastianbergmann/phpunit-mock-objects' => array('master', 'phpunit-mock-objects'),
+                'sebastianbergmann/phpunit-selenium'     => array('master', 'phpunit-selenium'),
+                'sebastianbergmann/phpunit-story'        => array('master', 'phpunit-story'),
+                'sebastianbergmann/php-invoker'          => array('master', 'php-invoker'),
+                'symfony/Yaml'                           => array('v2.1.0', 'symfony-components/Symfony/Component/Yaml'),
+                'symfony/Finder'                         => array('master', 'symfony-components/Symfony/Component/Finder')
         )
 );
 
@@ -64,4 +79,10 @@ function fetch(array $packages)
 	}
 }
 
-fetch($packages['3.7.10']);
+$version = isset($argv[1]) ? $argv[1] : "master";
+if (!array_key_exists($version, $packages)) {
+	echo "Usage: php fetch.php [" . implode("|", array_keys($packages)) . "]\n";
+	exit(1);
+}
+fetch($packages[$version]);
+
