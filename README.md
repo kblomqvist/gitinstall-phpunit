@@ -2,7 +2,7 @@
 
 The installation happens locally, so there's no need for root access. If you follow
 the instructions below, then `~/local/phpunit` will be your installation directory.
-Furthermore, if you like to install different version, edit fetch.php.
+If you like to install different version, edit fetch.php.
 
 ### Step 1. Decide the installation directory
 
@@ -20,17 +20,16 @@ Furthermore, if you like to install different version, edit fetch.php.
 ### Step 4. Check that everything works
 
     $ ./phpunit.sh --version
-    PHPUnit @package_version@ by Sebastian Bergmann.
+    PHPUnit 3.7.10 by Sebastian Bergmann.
     
-Note that the version is `@package_version@` because the PHPUnit wasn't build but checked from Git.
-
 To test the installation even further you may like to run PHPUnit selftest. Here's the trick how to do that
 
     $ cd $HOME/local/phpunit # just in case you got lost
     $ cd phpunit
     $ ../phpunit.sh
 
-Again you will see few unharmful errors because the PHPUnit wasn't build but checked from Git (or at least I assume this to be the case;). If you are getting an error `Class PEAR_RunTest not found`, then you have not installed PHP with PEAR. In this respect PHPUnit is not completely PEAR free.
+If you are getting an error `Class PEAR_RunTest not found`, then you have not installed PHP with PEAR.
+In this respect PHPUnit is not completely PEAR free.
 
 ### Optional step 5. Create symlink
 
@@ -60,3 +59,8 @@ Run the test suite
     $ ./run-test.php
 
 All test pass. Excellent!
+
+## QA
+
+Q: Why my PHPUnit version is `@package_version@`.  
+A: That's the feature of the earlier versions of PHPUnit (<=3.6).
