@@ -2,7 +2,6 @@
 
 The installation happens locally, so there's no need for root access. If you follow
 the instructions below, then `~/local/phpunit` will be your installation directory.
-If you like to install different version, edit fetch.php.
 
 ### Step 1. Decide the installation directory
 
@@ -15,7 +14,7 @@ If you like to install different version, edit fetch.php.
 
 ### Step 3. Run make install
 
-    $ make install
+    $ make install PHPUNIT_VERSION=3.7.10
 
 ### Step 4. Check that everything works
 
@@ -62,5 +61,5 @@ All test pass. Excellent!
 
 ## QA
 
-Q: Why my PHPUnit version is `@package_version@`.  
+Q: Why my PHPUnit version is `@package_version@`?  
 A: That's the feature of the earlier versions of PHPUnit (<=3.6).
