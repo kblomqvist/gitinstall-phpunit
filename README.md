@@ -22,14 +22,15 @@ The `~/local/phpunit` will be your installation directory, if you follow the ins
     $ ./phpunit.sh --version
     PHPUnit 3.7.10 by Sebastian Bergmann.
     
-To test the installation even further you may like to run PHPUnit selftest. Here's the trick how to do that
+To test the installation even further you may like to run PHPUnit selftest.
+Here's the trick how to do that
 
     $ cd $HOME/local/phpunit # just in case you got lost
     $ cd phpunit
     $ ../phpunit.sh
 
-If you are getting an error `Class PEAR_RunTest not found`, then you have not installed PHP with PEAR.
-In this respect PHPUnit is not completely PEAR free.
+If you are getting an error `Class PEAR_RunTest not found`, then you have not
+installed PHP with PEAR. In this respect PHPUnit is not completely PEAR free.
 
 ### Optional step 5. Create symlink
 
@@ -43,18 +44,19 @@ Now you can call phpunit at any directory, just like any other program
 
 ### Optional step 6. Just for fun
 
-Let's try to run something big. For example, the test suite of [Zend Framework 2](https://github.com/zendframework/zf2).
+Let's try to run something big. For example, the test suite of
+[Zend Framework 2](https://github.com/zendframework/zf2).
 
     $ cd $HOME/workspace # or where ever you like to work on
     $ git clone git://github.com/zendframework/zf2.git
     $ cd zf2/tests
 
-Edit `run-test.php` and setup `$phpunit_bin`
+Edit `run-test.php` file and setup `$phpunit_bin` variable like this
 
     $HOME = getenv("HOME");
     $phpunit_bin = "$HOME/local/phpunit/phpunit.sh";
 
-Run the test suite
+Now run the test suite
 
     $ ./run-test.php
 
