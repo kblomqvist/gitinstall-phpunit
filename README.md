@@ -47,11 +47,13 @@ Now you can call phpunit at any directory, just like any other program
 Let's try to run something big. For example, the test suite of
 [Zend Framework 2](https://github.com/zendframework/zf2).
 
+So first fetch ZF2 under your workspace
+
     $ cd $HOME/workspace # or where ever you like to work on
     $ git clone git://github.com/zendframework/zf2.git
     $ cd zf2/tests
 
-Edit `run-test.php` file and setup `$phpunit_bin` variable like this
+After then edit `run-test.php` file and setup `$phpunit_bin` variable like this
 
     $HOME = getenv("HOME");
     $phpunit_bin = "$HOME/local/phpunit/phpunit.sh";
