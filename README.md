@@ -32,14 +32,13 @@ Here's the trick how to do that
 If you are getting an error `Class PEAR_RunTest not found`, then you have not
 installed PHP with PEAR. In this respect PHPUnit is not completely PEAR free.
 
-### Optional step 5. Create symlink
+### Step 5. Create symlink to phpunit.sh
 
-    cd ~/bin # or whatever directory that's in your PATH
+    cd ~/bin # or whatever directory, that is in your PATH
     ln -s $HOME/local/phpunit/phpunit.sh phpunit
 
-Now you can call phpunit at any directory, just like any other program
+Now you can call phpunit just like any other program
 
-    cd # go home
     phpunit --version
 
 ### Optional step 6. Just for fun
