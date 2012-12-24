@@ -52,14 +52,13 @@ So first fetch ZF2 under your workspace
     $ git clone git://github.com/zendframework/zf2.git
     $ cd zf2/tests
 
-After then edit `run-test.php` file and setup `$phpunit_bin` variable like this
+After then edit `run-tests.php` file and setup `$phpunit_bin` variable like this
 
-    $HOME = getenv("HOME");
-    $phpunit_bin = "$HOME/local/phpunit/phpunit.sh";
+    $phpunit_bin = getenv("HOME") . "/local/phpunit/phpunit.sh";
 
 Now run the test suite
 
-    $ ./run-test.php
+    $ ./run-tests.php
 
 All test pass. Excellent!
 
